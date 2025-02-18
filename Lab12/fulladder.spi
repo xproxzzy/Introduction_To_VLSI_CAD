@@ -1,0 +1,9 @@
+.INC 'circuit.spi'
+.INC 'halfadder.spi'
+*** fulladder ***
+.subckt fulladder A B C S Cout VDD GND
+Xhalfadder1 A B sum1 carry1 VDD GND halfadder
+Xhalfadder2 C sum1 S carry2 VDD GND halfadder
+Xnor carry1 carry2 negcarry VDD GND nor
+Xinv negcarry Cout VDD GND inv
+.ends

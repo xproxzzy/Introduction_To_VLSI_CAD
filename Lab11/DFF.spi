@@ -1,0 +1,11 @@
+.INC 'circuit.spi'
+.INC 'nandthree.spi'
+*** DFF ***
+.subckt DFF clk D reset Q QX VDD GND
+Xnand1 net3 net1 net4 VDD GND nand
+Xnand2 net1 QX Q VDD GND nand
+Xnandthree1 net4 clk reset net1 VDD GND nandthree
+Xnandthree2 net1 clk net3 net2 VDD GND nandthree
+Xnandthree3 net2 D reset net3 VDD GND nandthree
+Xnandthree4 Q net2 reset QX VDD GND nandthree
+.ends

@@ -1,0 +1,21 @@
+*** inverter ***
+.subckt inv Vin Vout VDD GND
+MnMos Vout Vin GND GND n_18 W=0.5u L=0.18u
+MpMos Vout Vin VDD VDD p_18 W=1u L=0.18u
+.ends
+
+*** nand ***
+.subckt nand A B Vout VDD GND
+MnMos1 Vout A net1 GND n_18 W=0.5u L=0.18u
+MnMos2 net1 B GND GND n_18 W=0.5u L=0.18u
+MpMos1 Vout A VDD VDD p_18 W=1u L=0.18u
+MpMos2 Vout B VDD VDD p_18 W=1u L=0.18u
+.ends
+
+*** nor ***
+.subckt nor C D Vout VDD GND
+MnMos1 Vout C GND GND n_18 W=0.5u L=0.18u
+MnMos2 Vout D GND GND n_18 W=0.5u L=0.18u
+MpMos1 net1 C VDD VDD p_18 W=1u L=0.18u
+MpMos2 Vout D net1 VDD p_18 W=1u L=0.18u
+.ends

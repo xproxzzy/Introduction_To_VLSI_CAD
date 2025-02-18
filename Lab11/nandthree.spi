@@ -1,0 +1,9 @@
+*** nandthree ***
+.subckt nandthree X Y Z F VDD GND
+MnMos1 F X net1 GND n_18 W=0.5u L=0.18u
+MnMos2 net1 Y net2 GND n_18 W=0.5u L=0.18u
+MnMos3 net2 Z GND GND n_18 W=0.5u L=0.18u
+MpMos1 F X VDD VDD p_18 W=1u L=0.18u
+MpMos2 F Y VDD VDD p_18 W=1u L=0.18u
+MpMos3 F Z VDD VDD p_18 W=1u L=0.18u
+.ends
